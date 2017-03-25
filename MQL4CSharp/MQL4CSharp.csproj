@@ -16,7 +16,8 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\..\..\AppData\Roaming\MetaQuotes\Terminal\0DCB35E10C852FCCE1D2C3D111FD683E\MQL4\Libraries\</OutputPath>
+    <OutputPath>..\Output\bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>..\Output\obj\$(Configuration)</IntermediateOutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -26,7 +27,8 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\Output\bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>..\Output\obj\$(Configuration)</IntermediateOutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -35,28 +37,28 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GrapevinePlus, Version=3.0.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GrapevinePlus.3.0.4\lib\net40\GrapevinePlus.dll</HintPath>
+    <Reference Include="GrapevinePlus, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GrapevinePlus.3.1.0\lib\net40\GrapevinePlus.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="NodaTime, Version=1.3.0.0, Culture=neutral, PublicKeyToken=4226afe0d9b296d1, processorArchitecture=MSIL">
-      <HintPath>..\packages\NodaTime.1.3.1\lib\net35-Client\NodaTime.dll</HintPath>
+      <HintPath>..\packages\NodaTime.1.3.2\lib\net35-Client\NodaTime.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="RGiesecke.DllExport.Metadata, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8f52d83c1a22df51, processorArchitecture=MSIL">
       <HintPath>..\packages\UnmanagedExports.1.2.7\lib\net\RGiesecke.DllExport.Metadata.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="SmartThreadPool, Version=2.2.3.0, Culture=neutral, PublicKeyToken=1126fe8b671e8a79, processorArchitecture=MSIL">
-      <HintPath>..\packages\SmartThreadPool.dll.2.2.3\lib\SmartThreadPool.dll</HintPath>
+    <Reference Include="SmartThreadPool, Version=2.2.4.0, Culture=neutral, PublicKeyToken=1126fe8b671e8a79, processorArchitecture=MSIL">
+      <HintPath>..\packages\SmartThreadPool.dll.2.2.4\lib\net45\SmartThreadPool.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -135,6 +137,7 @@
     <Compile Include="UserDefined\Input\NewsReport.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="Mql\mql4csharp.mq4" />
     <None Include="packages.config" />
     <None Include="log4net.config">

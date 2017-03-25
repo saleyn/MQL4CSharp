@@ -1,6 +1,3 @@
-﻿
-
-
 bool executeBoolCommand(int id, string params[])
 {
    switch(id)

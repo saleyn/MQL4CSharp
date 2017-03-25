@@ -23,6 +23,12 @@ using System.IO;
 
 namespace mql4csharp
 {
+    public static class WinAPI
+    {
+      [DllImport("kernel32.dll", CharSet = CharSet.Auto)]
+      public static extern void OutputDebugString(string message);
+    }
+
     public class Logging
     {
         private static readonly ILog LOG = LogManager.GetLogger(typeof(Logging));
@@ -41,15 +47,17 @@ namespace mql4csharp
 
                     if (!configFile.Exists)
                     {
+                        WinAPI.OutputDebugString($"Configuration file {configFile} doesn't exist!");
                         throw new FileLoadException(String.Format("The configuration file {0} does not exist", configFile));
                     }
-
                     log4net.Config.XmlConfigurator.Configure(configFile);
                 }
                 LOG.Info("Logging initialized");
+                WinAPI.OutputDebugString("Logging initialized");
             }
             catch (Exception e)
             {
+                WinAPI.OutputDebugString($"Error: {e.Message}");
                 LOG.Error(e);
             }
         }
